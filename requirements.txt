@@ -1,0 +1,8 @@
+torch==2.12.0
+torchvision==0.27.0
+transformers==5.9.0
+huggingface_hub==1.15.0
+mediapipe==0.10.35
+opencv-python==4.13.0.92
+pillow==12.2.0
+numpy==2.4.6
