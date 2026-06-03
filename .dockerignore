@@ -1,0 +1,14 @@
+# Artefactos pesados / locales que no deben ir al contexto de build.
+model_export/
+models/
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.git/
+.gitignore
+*.onnx
+*.tflite
+asl_webcam.py
+README.md

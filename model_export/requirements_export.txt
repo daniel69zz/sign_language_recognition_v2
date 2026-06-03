@@ -1,0 +1,8 @@
+# Dependencias para exportar/cuantizar el modelo SigLIP2 a ONNX on-device.
+# Probado con Python 3.10 en Windows.
+torch==2.2.2
+transformers==4.44.2
+onnx==1.15.0
+onnxruntime==1.17.3
+pillow
+numpy

@@ -1,0 +1,9 @@
+# Dependencias del servidor REST (flask_server.py).
+# Probado con Python 3.10. numpy fijado <2 por compatibilidad con mediapipe.
+flask==3.0.3
+torch
+transformers==4.44.2
+mediapipe==0.10.14
+opencv-python
+pillow
+numpy==1.26.4

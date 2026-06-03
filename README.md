@@ -10,7 +10,32 @@ constructor de palabras por estabilidad temporal y modo espejo.
 
 ---
 
-## Requisitos
+## Servidor REST (para la app Flutter)
+
+Además de la app de webcam, este repo incluye `flask_server.py`: el mismo
+pipeline (MediaPipe + SigLIP2) expuesto como API REST que consume la app
+Flutter de `../HeHa`.
+
+### Con Docker (recomendado)
+
+```bash
+docker compose up --build        # http://0.0.0.0:5000
+```
+
+Los modelos se descargan una vez y se persisten en el volumen `asl-models`.
+
+### Sin Docker
+
+```bash
+pip install -r requirements_server.txt
+python flask_server.py
+```
+
+Endpoints: `GET /health`, `POST /recognize` (multipart `image`), `GET /info`.
+
+---
+
+## Requisitos (app de webcam)
 
 - **Python 3.12.1** (probado en esta versión; debería funcionar en 3.10–3.12)
 - Webcam conectada

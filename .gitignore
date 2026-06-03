@@ -4,10 +4,17 @@ venv/
 env/
 
 # Modelos descargados en tiempo de ejecución
-models/hand_landmarker.task
+models/
+
+# Artefactos de export/conversion del modelo (pesados)
+model_export/build/
+*.onnx
+*.tflite
+*.npy
 
 # Caché de Hugging Face local
 .cache/
+hf-cache/
 
 # Python
 __pycache__/

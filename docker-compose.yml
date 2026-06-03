@@ -1,0 +1,20 @@
+services:
+  asl-server:
+    build: .
+    image: asl-recognition-server
+    container_name: asl-recognition-server
+    ports:
+      - "5000:5000"
+    volumes:
+      # Persiste los modelos descargados (SigLIP2 ~372 MB + hand_landmarker).
+      - asl-models:/app/models
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if __import__('json').load(urllib.request.urlopen('http://localhost:5000/health'))['models_loaded'] else 1)"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 180s
+
+volumes:
+  asl-models:
